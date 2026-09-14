@@ -77,15 +77,16 @@ img{
 }
 
 
-/* =========================
-   SCREEN EFFECTS
-========================= */
+/* =====================================
+   NOISE / SCANLINES
+===================================== */
 
 .noise{
   position:fixed;
   inset:0;
   z-index:999;
   pointer-events:none;
+
   opacity:.018;
 
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -96,6 +97,7 @@ img{
   inset:0;
   z-index:998;
   pointer-events:none;
+
   opacity:.035;
 
   background:
@@ -107,9 +109,9 @@ img{
 }
 
 
-/* =========================
+/* =====================================
    HEADER
-========================= */
+===================================== */
 
 .header{
   position:fixed;
@@ -148,6 +150,7 @@ img{
 .brand-icon{
   width:38px;
   height:38px;
+
   border-radius:10px;
 
   display:grid;
@@ -172,9 +175,11 @@ img{
 
 .brand small{
   display:block;
+
   font-size:8px;
   letter-spacing:.18em;
   color:#8f849d;
+
   margin-top:3px;
 }
 
@@ -195,45 +200,60 @@ nav a:hover{
 
 .menu{
   display:none;
+
   background:none;
   border:0;
+
   width:42px;
 }
 
 .menu span{
   display:block;
+
   height:2px;
+
   background:white;
+
   margin:6px;
 }
 
 
-/* =========================
+/* =====================================
    HERO
-========================= */
+===================================== */
 
 .hero{
   min-height:100vh;
+
   padding-top:140px;
 
   display:grid;
-  grid-template-columns:1.08fr .92fr;
+
+  grid-template-columns:
+    1.08fr .92fr;
 
   align-items:center;
+
   gap:70px;
 }
 
 .hero h1{
-  font-size:clamp(70px,9vw,132px);
+  font-size:
+    clamp(70px,9vw,132px);
+
   line-height:.84;
+
   letter-spacing:-.075em;
-  margin:18px 0 30px;
+
+  margin:
+    18px 0 30px;
 }
 
 
-/* =========================
+/* =====================================
    GLITCH
-========================= */
+   ブレを控えめに
+===================================== */
 
 .glitch{
   position:relative;
@@ -248,6 +268,7 @@ nav a:hover{
   content:attr(data-text);
 
   position:absolute;
+
   left:0;
   top:0;
 
@@ -257,70 +278,113 @@ nav a:hover{
 }
 
 .glitch::before{
-  transform:translate(1px,-1px);
+  transform:
+    translate(1px,-1px);
+
   color:var(--pink);
-  clip-path:inset(0 0 55% 0);
+
+  clip-path:
+    inset(0 0 55% 0);
 }
 
 .glitch::after{
-  transform:translate(-1px,1px);
+  transform:
+    translate(-1px,1px);
+
   color:var(--cyan);
-  clip-path:inset(55% 0 0 0);
+
+  clip-path:
+    inset(55% 0 0 0);
 }
 
 
-/* =========================
-   HERO TEXT
-========================= */
+/* =====================================
+   HERO HEADLINE
+===================================== */
 
 .hero h2{
-  font-size:clamp(34px,5vw,68px);
+  font-size:
+    clamp(34px,5vw,68px);
+
   line-height:1.02;
-  margin:0 0 26px;
+
+  margin:
+    0 0 26px;
 }
 
-/*
-  「でも、やめられない。」
-  を必ず1行で表示
-*/
-.hero h2 em{
-  display:inline-block;
 
-  white-space:nowrap;
+/*
+  ★ここが今回の重要な修正★
+
+  「でも、やめられない。」
+  を絶対に途中改行しない
+*/
+
+.hero h2 em{
+  display:block;
+
+  width:max-content;
+  max-width:none;
+
+  white-space:nowrap !important;
+
+  word-break:keep-all !important;
+
+  overflow-wrap:normal !important;
+
+  line-break:strict;
 
   font-style:normal;
 
   color:transparent;
 
-  -webkit-text-stroke:1px white;
+  -webkit-text-stroke:
+    1px white;
 
   /*
-    横幅に収まりやすいよう
-    2行目だけ少し小さくする
+    文字列全体が横1列に
+    収まりやすいサイズに設定
   */
-  font-size:.72em;
+  font-size:
+    clamp(28px,4.4vw,56px);
 
-  letter-spacing:-.05em;
+  line-height:1.06;
+
+  letter-spacing:-.055em;
 }
+
+
+/* =====================================
+   HERO BODY
+===================================== */
 
 .lead{
   color:#b4a9c5;
+
   line-height:1.95;
 }
 
 .actions{
   display:flex;
+
   gap:12px;
+
   flex-wrap:wrap;
-  margin:34px 0 24px;
+
+  margin:
+    34px 0 24px;
 }
 
 .button{
-  padding:14px 19px;
+  padding:
+    14px 19px;
+
   border-radius:14px;
+
   font-weight:800;
 
   display:inline-flex;
+
   justify-content:center;
 }
 
@@ -337,39 +401,53 @@ nav a:hover{
 }
 
 .secondary{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.035);
+  border:
+    1px solid var(--line);
+
+  background:
+    rgba(255,255,255,.035);
 }
 
 .chips{
   display:flex;
+
   gap:16px;
+
   flex-wrap:wrap;
 
   font-size:10px;
+
   letter-spacing:.16em;
+
   color:#756b83;
 }
 
 
-/* =========================
+/* =====================================
    HERO ART
-========================= */
+===================================== */
 
 .hero-art{
   position:relative;
+
   display:grid;
+
   place-items:center;
 }
 
 .phone{
-  width:min(405px,82vw);
-  aspect-ratio:1242/2688;
+  width:
+    min(405px,82vw);
+
+  aspect-ratio:
+    1242/2688;
 
   border-radius:46px;
+
   overflow:hidden;
 
   position:relative;
+
   z-index:2;
 
   border:
@@ -382,7 +460,9 @@ nav a:hover{
 
 .phone img{
   width:100%;
+
   height:100%;
+
   object-fit:cover;
 }
 
@@ -397,38 +477,46 @@ nav a:hover{
 
 .halo1{
   width:520px;
+
   height:520px;
-  animation:rot 16s linear infinite;
+
+  animation:
+    rot 16s linear infinite;
 }
 
 .halo2{
   width:610px;
+
   height:350px;
 
-  transform:rotate(32deg);
+  transform:
+    rotate(32deg);
 
   border-color:
     rgba(255,39,216,.24);
 
-  animation:rot2 19s linear infinite;
+  animation:
+    rot2 19s linear infinite;
 }
 
 @keyframes rot{
   to{
-    transform:rotate(360deg);
+    transform:
+      rotate(360deg);
   }
 }
 
 @keyframes rot2{
   to{
-    transform:rotate(392deg);
+    transform:
+      rotate(392deg);
   }
 }
 
 
-/* =========================
+/* =====================================
    MARQUEE
-========================= */
+===================================== */
 
 .marquee{
   overflow:hidden;
@@ -442,6 +530,7 @@ nav a:hover{
 
 .marquee div{
   display:flex;
+
   gap:70px;
 
   white-space:nowrap;
@@ -449,6 +538,7 @@ nav a:hover{
   padding:16px 0;
 
   font-weight:900;
+
   letter-spacing:.08em;
 
   animation:
@@ -465,46 +555,59 @@ nav a:hover{
 
 @keyframes scroll{
   to{
-    transform:translateX(-50%);
+    transform:
+      translateX(-50%);
   }
 }
 
 
-/* =========================
+/* =====================================
    SECTION TITLE
-========================= */
+===================================== */
 
 .section-title{
   display:flex;
+
   align-items:end;
+
   justify-content:space-between;
 
   gap:45px;
+
   margin-bottom:46px;
 }
 
 .section-title h2,
 .story h2,
 .purchase h2{
-  font-size:clamp(34px,5vw,60px);
+  font-size:
+    clamp(34px,5vw,60px);
+
   line-height:1.05;
-  margin:10px 0 0;
+
+  margin:
+    10px 0 0;
 }
 
 .section-title > p{
   max-width:430px;
+
   color:var(--muted);
+
   line-height:1.85;
 }
 
 
-/* =========================
+/* =====================================
    FEATURES
-========================= */
+===================================== */
 
 .feature-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:16px;
 }
 
@@ -523,29 +626,36 @@ nav a:hover{
 
 .feature-grid b{
   color:var(--pink);
+
   font-size:26px;
 }
 
 .feature-grid p,
 .support-grid p{
   color:var(--muted);
+
   line-height:1.7;
+
   font-size:14px;
 }
 
 
-/* =========================
+/* =====================================
    GAMES
-========================= */
+===================================== */
 
 .game-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:15px;
 }
 
 .game{
   min-height:242px;
+
   padding:20px;
 
   border:
@@ -561,6 +671,7 @@ nav a:hover{
     );
 
   position:relative;
+
   overflow:hidden;
 }
 
@@ -579,19 +690,24 @@ nav a:hover{
 
 .game > span{
   color:var(--cyan);
+
   font-size:12px;
+
   font-weight:900;
 }
 
 .icon{
   width:68px;
+
   height:68px;
 
   border-radius:18px;
 
-  margin:25px 0 17px;
+  margin:
+    25px 0 17px;
 
   display:grid;
+
   place-items:center;
 
   background:
@@ -603,6 +719,7 @@ nav a:hover{
     );
 
   font-weight:900;
+
   font-size:23px;
 
   box-shadow:
@@ -623,7 +740,9 @@ nav a:hover{
 
 .digits{
   font-family:monospace;
+
   color:#ff4557;
+
   background:#16030a;
 
   text-shadow:
@@ -632,45 +751,59 @@ nav a:hover{
 
 .dad{
   font-size:14px;
+
   background:#191027;
+
   color:var(--cyan);
 }
 
 .game h3{
   font-size:20px;
-  margin:0 0 8px;
+
+  margin:
+    0 0 8px;
 }
 
 .game p{
   margin:0;
+
   color:#91869f;
+
   line-height:1.6;
+
   font-size:13px;
 }
 
 
-/* =========================
+/* =====================================
    STORY
-========================= */
+===================================== */
 
 .story{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
 
   gap:65px;
+
   align-items:center;
 }
 
 .story-text{
   color:var(--muted);
+
   line-height:1.9;
 }
 
 .steps{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
 
   gap:11px;
+
   margin-top:30px;
 }
 
@@ -685,21 +818,26 @@ nav a:hover{
 
 .steps strong{
   display:block;
+
   color:var(--pink);
+
   font-size:13px;
 }
 
 .steps span{
   display:block;
+
   color:#a89db7;
+
   font-size:12px;
+
   margin-top:5px;
 }
 
 
-/* =========================
+/* =====================================
    TERMINAL
-========================= */
+===================================== */
 
 .terminal{
   min-height:445px;
@@ -710,6 +848,7 @@ nav a:hover{
     1px solid rgba(36,232,255,.28);
 
   border-radius:23px;
+
   overflow:hidden;
 
   box-shadow:
@@ -723,14 +862,18 @@ nav a:hover{
     1px solid var(--line);
 
   display:flex;
+
   align-items:center;
 
   gap:7px;
-  padding:0 17px;
+
+  padding:
+    0 17px;
 }
 
 .terminal-top i{
   width:9px;
+
   height:9px;
 
   border-radius:50%;
@@ -740,31 +883,39 @@ nav a:hover{
 
 .terminal pre{
   white-space:pre-wrap;
+
   color:#69f7ff;
+
   line-height:1.8;
+
   font-size:13px;
+
   padding:24px;
 }
 
 
-/* =========================
+/* =====================================
    QUOTE
-========================= */
+===================================== */
 
 .quote blockquote{
   text-align:center;
+
   margin:0;
 
   font-size:
     clamp(32px,6vw,75px);
 
   line-height:1.08;
+
   font-weight:900;
+
   letter-spacing:-.04em;
 }
 
 .quote em{
   font-style:normal;
+
   color:transparent;
 
   -webkit-text-stroke:
@@ -772,12 +923,13 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =====================================
    SCREENSHOTS
-========================= */
+===================================== */
 
 .shots{
   display:grid;
+
   grid-auto-flow:column;
 
   grid-auto-columns:
@@ -787,7 +939,8 @@ nav a:hover{
 
   overflow-x:auto;
 
-  scroll-snap-type:x mandatory;
+  scroll-snap-type:
+    x mandatory;
 
   padding-bottom:20px;
 
@@ -799,7 +952,8 @@ nav a:hover{
 
   width:100%;
 
-  aspect-ratio:1242/2688;
+  aspect-ratio:
+    1242/2688;
 
   object-fit:cover;
 
@@ -810,9 +964,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =====================================
    PURCHASE
-========================= */
+===================================== */
 
 .purchase-card{
   padding:46px;
@@ -823,7 +977,9 @@ nav a:hover{
   border-radius:30px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   gap:30px;
@@ -843,30 +999,36 @@ nav a:hover{
 
 .purchase-card p{
   color:var(--muted);
+
   line-height:1.8;
+
   max-width:720px;
 }
 
 
-/* =========================
+/* =====================================
    SUPPORT
-========================= */
+===================================== */
 
 .support-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:16px;
 }
 
 .text-link{
   color:var(--cyan);
+
   font-weight:800;
 }
 
 
-/* =========================
+/* =====================================
    PRIVACY
-========================= */
+===================================== */
 
 .privacy-card{
   padding:35px;
@@ -890,58 +1052,71 @@ nav a:hover{
 
 .privacy-card p{
   color:var(--muted);
+
   line-height:1.85;
 }
 
 .policy-date{
-  margin-top:35px !important;
-  color:#756c82 !important;
+  margin-top:
+    35px !important;
+
+  color:
+    #756c82 !important;
+
   font-size:12px;
 }
 
 
-/* =========================
+/* =====================================
    FOOTER
-========================= */
+===================================== */
 
 footer{
-  padding:38px 0 65px;
+  padding:
+    38px 0 65px;
 
   border-top:
     1px solid var(--line);
 
   display:flex;
+
   justify-content:space-between;
 
   color:#786f84;
+
   font-size:12px;
 }
 
 footer strong{
   color:white;
+
   margin-right:12px;
 }
 
 footer span{
   font-size:9px;
+
   letter-spacing:.18em;
 }
 
 
-/* =========================
+/* =====================================
    LIVE BADGE
-========================= */
+===================================== */
 
 .live-badge{
   display:inline-flex;
+
   align-items:center;
 
   gap:10px;
 
   margin-top:14px;
+
   margin-bottom:10px;
 
-  padding:10px 14px;
+  padding:
+    10px 14px;
 
   border:
     1px solid rgba(36,232,255,.28);
@@ -957,17 +1132,21 @@ footer span{
   color:white;
 
   font-weight:800;
+
   font-size:13px;
 }
 
 .live-badge small{
   color:#8f859e;
+
   font-size:10px;
+
   font-weight:700;
 }
 
 .live-dot{
   width:9px;
+
   height:9px;
 
   border-radius:50%;
@@ -977,7 +1156,8 @@ footer span{
   box-shadow:
     0 0 12px rgba(50,255,138,.95);
 
-  flex:0 0 auto;
+  flex:
+    0 0 auto;
 
   animation:
     pulseLive 1.6s ease-in-out infinite;
@@ -997,9 +1177,9 @@ footer span{
 }
 
 
-/* =========================
+/* =====================================
    DOWNLOAD
-========================= */
+===================================== */
 
 .download-section{
   padding-top:40px;
@@ -1014,9 +1194,12 @@ footer span{
   border-radius:32px;
 
   display:grid;
-  grid-template-columns:1.35fr .65fr;
+
+  grid-template-columns:
+    1.35fr .65fr;
 
   gap:34px;
+
   align-items:center;
 
   background:
@@ -1046,34 +1229,44 @@ footer span{
 
   line-height:1.04;
 
-  margin:12px 0 20px;
+  margin:
+    12px 0 20px;
 }
 
 .download-card p{
   color:var(--muted);
+
   line-height:1.85;
 }
 
 .status-line{
   display:flex;
+
   align-items:center;
+
   gap:10px;
+
   margin-top:10px;
 }
 
 .status-line strong{
   color:#dfffea;
+
   font-size:15px;
 }
 
 .download-note{
   font-size:13px;
-  color:#8f859d !important;
+
+  color:
+    #8f859d !important;
 }
 
 .download-actions{
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-start;
 
   gap:14px;
@@ -1081,25 +1274,33 @@ footer span{
 
 .store-button{
   min-width:250px;
+
   gap:12px;
+
   justify-content:flex-start;
 }
 
 .store-button .apple-mark{
   font-size:34px;
+
   line-height:1;
 }
 
 .store-button span:last-child{
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-start;
+
   line-height:1.05;
 }
 
 .store-button small{
   font-size:10px;
+
   font-weight:700;
+
   opacity:.78;
 }
 
@@ -1108,9 +1309,9 @@ footer span{
 }
 
 
-/* =========================
+/* =====================================
    TABLET
-========================= */
+===================================== */
 
 @media(max-width:900px){
 
@@ -1120,10 +1321,13 @@ footer span{
     position:absolute;
 
     top:76px;
+
     left:14px;
+
     right:14px;
 
     flex-direction:column;
+
     align-items:stretch;
 
     padding:18px;
@@ -1146,7 +1350,18 @@ footer span{
 
   .hero{
     grid-template-columns:1fr;
+
     text-align:center;
+  }
+
+  /*
+    画面中央に
+    「でも、やめられない。」
+    を配置
+  */
+  .hero h2 em{
+    margin-left:auto;
+    margin-right:auto;
   }
 
   .actions,
@@ -1198,21 +1413,12 @@ footer span{
   .store-button{
     width:100%;
   }
-
-  /*
-    タブレットは横幅が広いので
-    少し大きめでも1行に収める
-  */
-  .hero h2 em{
-    font-size:.8em;
-    white-space:nowrap;
-  }
 }
 
 
-/* =========================
+/* =====================================
    MOBILE
-========================= */
+===================================== */
 
 @media(max-width:560px){
 
@@ -1225,12 +1431,15 @@ footer span{
   }
 
   .section{
-    padding:76px 0;
+    padding:
+      76px 0;
   }
 
   .header{
     height:68px;
-    padding:0 15px;
+
+    padding:
+      0 15px;
   }
 
   nav{
@@ -1246,8 +1455,10 @@ footer span{
   }
 
 
-  /* iPhoneのグリッチを控えめに */
-
+  /*
+    スマホのグリッチは
+    さらに控えめ
+  */
   .glitch{
     text-shadow:
       1px 0 var(--pink),
@@ -1276,20 +1487,30 @@ footer span{
 
 
   /*
-    重要：
-    「でも、やめられない。」
-    をスマホでも1行固定
+    ★スマホでも絶対1行★
   */
-
   .hero h2 em{
-    display:inline-block;
-    white-space:nowrap;
+    display:block;
 
-    font-size:.84em;
+    width:max-content;
 
-    letter-spacing:-.055em;
+    max-width:none;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    white-space:nowrap !important;
+
+    word-break:keep-all !important;
+
+    overflow-wrap:normal !important;
+
+    font-size:28px;
+
+    letter-spacing:-.06em;
+
+    line-height:1.08;
   }
-
 
   .lead br{
     display:none;
@@ -1317,7 +1538,9 @@ footer span{
 
   .live-badge{
     flex-wrap:wrap;
+
     justify-content:center;
+
     border-radius:18px;
   }
 
@@ -1335,28 +1558,33 @@ footer span{
 }
 
 
-/* =========================
-   SMALL MOBILE
-   iPhone SEなど
-========================= */
+/* =====================================
+   VERY SMALL PHONE
+===================================== */
 
-@media(max-width:390px){
+@media(max-width:360px){
+
+  .hero h1{
+    font-size:61px;
+  }
 
   .hero h2{
-    font-size:36px;
+    font-size:35px;
   }
 
   .hero h2 em{
-    font-size:.80em;
+    font-size:25px;
+
     letter-spacing:-.065em;
-    white-space:nowrap;
+
+    white-space:nowrap !important;
   }
 }
 
 
-/* =========================
+/* =====================================
    REDUCED MOTION
-========================= */
+===================================== */
 
 @media(prefers-reduced-motion:reduce){
 
