@@ -1,8 +1,14 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
   <meta name="theme-color" content="#08020f">
 
   <meta
@@ -10,18 +16,25 @@
     content="クソゲー。公式サイト。意味不明。でも、やめられない。40本のミニゲームとP-039の物語。"
   >
 
+  <!-- OGP -->
   <meta property="og:title" content="クソゲー。">
   <meta
     property="og:description"
     content="くだらないのに、本気になる。40本のクソゲーと謎の物語。"
   >
   <meta property="og:type" content="website">
-  <meta property="og:image" content="hero.jpg">
+  <meta property="og:image" content="app-icon.jpg">
+
+  <!-- ICON -->
+  <link rel="icon" href="app-icon.jpg" type="image/jpeg">
+  <link rel="shortcut icon" href="app-icon.jpg">
+  <link rel="apple-touch-icon" href="app-icon.jpg">
 
   <title>クソゲー。 | KUSOGE PROJECT</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
@@ -29,15 +42,23 @@
   <div class="scanlines" aria-hidden="true"></div>
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="header">
 
     <a href="#top" class="brand">
 
-      <span class="brand-icon">K</span>
+      <span class="brand-icon">
+        <img
+          src="app-icon.jpg"
+          alt=""
+          aria-hidden="true"
+        >
+      </span>
 
-      <span>
+      <span class="brand-copy">
         <strong>クソゲー。</strong>
         <small>KUSOGE PROJECT</small>
       </span>
@@ -47,6 +68,7 @@
 
     <button
       class="menu"
+      type="button"
       aria-label="メニュー"
       aria-expanded="false"
     >
@@ -57,12 +79,19 @@
 
 
     <nav>
+
       <a href="#about">ABOUT</a>
+
       <a href="#games">GAMES</a>
+
       <a href="#story">STORY</a>
+
       <a href="#download">DOWNLOAD</a>
+
       <a href="#support">SUPPORT</a>
+
       <a href="#privacy">PRIVACY</a>
+
     </nav>
 
   </header>
@@ -72,7 +101,9 @@
   <main id="top">
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero wrap">
 
@@ -93,7 +124,7 @@
 
           <span class="live-dot"></span>
 
-          <span>
+          <span class="live-main">
             App Storeで配信中
           </span>
 
@@ -104,6 +135,9 @@
         </a>
 
 
+
+        <!-- クソゲー。は必ず1行 -->
+
         <h1
           class="glitch"
           data-text="クソゲー。"
@@ -111,6 +145,9 @@
           クソゲー。
         </h1>
 
+
+
+        <!-- 必ずこの2行 -->
 
         <h2 class="hero-headline">
 
@@ -125,11 +162,17 @@
         </h2>
 
 
+
         <p class="lead">
+
           押す。連打する。止める。逆に押す。<br>
+
           そして、父さんを起こさないように毛布をかける。<br>
+
           くだらないのに、なぜか本気になるミニゲーム集。
+
         </p>
+
 
 
         <div class="actions">
@@ -143,6 +186,7 @@
             App Storeでダウンロード
           </a>
 
+
           <a
             class="button secondary"
             href="#games"
@@ -153,10 +197,15 @@
         </div>
 
 
+
         <div class="chips">
+
           <span>#40GAMES</span>
+
           <span>#P039</span>
+
           <span>#NEON_GLITCH</span>
+
         </div>
 
       </div>
@@ -165,8 +214,16 @@
 
       <div class="hero-art">
 
-        <div class="halo halo1"></div>
-        <div class="halo halo2"></div>
+        <div
+          class="halo halo1"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="halo halo2"
+          aria-hidden="true"
+        ></div>
+
 
         <div class="phone">
 
@@ -183,22 +240,47 @@
 
 
 
-    <!-- MARQUEE -->
+    <!-- =========================
+         MARQUEE
+    ========================== -->
 
     <section class="marquee">
 
       <div>
-        <span>くだらない。でも止まらない。</span>
-        <span>PLAY THE STORY.</span>
-        <span>意味のない時間も、無駄だったことにしなくていい。</span>
-        <span>くだらない。でも止まらない。</span>
+
+        <span>
+          くだらない。でも止まらない。
+        </span>
+
+        <span>
+          PLAY THE STORY.
+        </span>
+
+        <span>
+          意味のない時間も、無駄だったことにしなくていい。
+        </span>
+
+        <span>
+          くだらない。でも止まらない。
+        </span>
+
+        <span>
+          PLAY THE STORY.
+        </span>
+
+        <span>
+          意味のない時間も、無駄だったことにしなくていい。
+        </span>
+
       </div>
 
     </section>
 
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
     <section
       id="about"
@@ -222,9 +304,15 @@
 
 
         <p>
-          「クソゲー。」は、短時間で遊べるミニゲームを詰め込んだiPhone向けゲームです。
-          最初はただのくだらないゲーム。でも番号順に進むほど、
+
+          「クソゲー。」は、短時間で遊べるミニゲームを
+          詰め込んだiPhone向けゲームです。
+
+          最初はただのくだらないゲーム。
+
+          でも番号順に進むほど、
           P-039という開発者の記録が少しずつ見えてきます。
+
         </p>
 
       </div>
@@ -234,32 +322,52 @@
       <div class="feature-grid">
 
         <article>
+
           <b>01</b>
-          <h3>すぐ遊べる</h3>
+
+          <h3>
+            すぐ遊べる
+          </h3>
+
           <p>
             説明を読んだら、あとは押すだけ。
             失敗してもすぐやり直せます。
           </p>
+
         </article>
 
 
+
         <article>
+
           <b>02</b>
-          <h3>40本のミニゲーム</h3>
+
+          <h3>
+            40本のミニゲーム
+          </h3>
+
           <p>
             公開版のゲームから、
             完全版で続く追加ゲームまで収録。
           </p>
+
         </article>
 
 
+
         <article>
+
           <b>03</b>
-          <h3>遊ぶほど物語が進む</h3>
+
+          <h3>
+            遊ぶほど物語が進む
+          </h3>
+
           <p>
             DEV NOTEとログが解放され、
             P-039の記録が時系列でつながっていきます。
           </p>
+
         </article>
 
       </div>
@@ -268,7 +376,9 @@
 
 
 
-    <!-- GAMES -->
+    <!-- =========================
+         GAMES
+    ========================== -->
 
     <section
       id="games"
@@ -290,6 +400,7 @@
 
         </div>
 
+
         <p>
           ほんの数秒で終わるゲームから、
           地味に神経を使うゲームまで。
@@ -301,73 +412,166 @@
 
       <div class="game-grid">
 
+
         <article class="game hot">
+
           <span>#01</span>
-          <div class="icon red">●</div>
-          <h3>押すな</h3>
-          <p>絶対に押すな。…押すなよ？</p>
+
+          <div class="icon red">
+            ●
+          </div>
+
+          <h3>
+            押すな
+          </h3>
+
+          <p>
+            絶対に押すな。…押すなよ？
+          </p>
+
         </article>
 
 
+
         <article class="game">
+
           <span>#02</span>
-          <div class="icon">✋</div>
-          <h3>連打地獄</h3>
-          <p>止まるな。それが、すべてだ。</p>
+
+          <div class="icon">
+            ✋
+          </div>
+
+          <h3>
+            連打地獄
+          </h3>
+
+          <p>
+            止まるな。それが、すべてだ。
+          </p>
+
         </article>
 
 
+
         <article class="game">
+
           <span>#03</span>
-          <div class="icon digits">37</div>
-          <h3>37で止めろ</h3>
-          <p>たったそれだけ。…たったそれだけ。</p>
+
+          <div class="icon digits">
+            37
+          </div>
+
+          <h3>
+            37で止めろ
+          </h3>
+
+          <p>
+            たったそれだけ。…たったそれだけ。
+          </p>
+
         </article>
 
 
+
         <article class="game">
+
           <span>#04</span>
-          <div class="icon">⚠</div>
-          <h3>まだ押すな</h3>
-          <p>今度こそ、押すな。</p>
+
+          <div class="icon">
+            ⚠
+          </div>
+
+          <h3>
+            まだ押すな
+          </h3>
+
+          <p>
+            今度こそ、押すな。
+          </p>
+
         </article>
 
 
+
         <article class="game">
+
           <span>#05</span>
-          <div class="icon">↔</div>
-          <h3>逆に押せ</h3>
-          <p>表示と逆を押せ。</p>
+
+          <div class="icon">
+            ↔
+          </div>
+
+          <h3>
+            逆に押せ
+          </h3>
+
+          <p>
+            表示と逆を押せ。
+          </p>
+
         </article>
+
 
 
         <article class="game">
+
           <span>#06</span>
-          <div class="icon">1cm</div>
-          <h3>1cm進むゲーム</h3>
-          <p>100mまで、1cmずつ。</p>
+
+          <div class="icon">
+            1cm
+          </div>
+
+          <h3>
+            1cm進むゲーム
+          </h3>
+
+          <p>
+            100mまで、1cmずつ。
+          </p>
+
         </article>
+
 
 
         <article class="game wide">
+
           <span>#11</span>
-          <div class="icon dad">ZZZ</div>
-          <h3>父さんを起こすな</h3>
+
+          <div class="icon dad">
+            ZZZ
+          </div>
+
+          <h3>
+            父さんを起こすな
+          </h3>
+
           <p>
             寝落ちした父に、そっと毛布を。
             急ぐと起きる。
           </p>
+
         </article>
+
 
 
         <article class="game locked">
+
           <span>#40</span>
-          <div class="icon">?</div>
-          <h3>まだ見ぬログの先に</h3>
+
+          <div class="icon">
+            ?
+          </div>
+
+          <h3>
+            まだ見ぬログの先に
+          </h3>
+
           <p>
             最後まで進んだ人だけが見つけるもの。
           </p>
+
         </article>
+
 
       </div>
 
@@ -375,7 +579,9 @@
 
 
 
-    <!-- STORY -->
+    <!-- =========================
+         STORY
+    ========================== -->
 
     <section
       id="story"
@@ -388,17 +594,23 @@
           P-039 / DEV NOTE
         </p>
 
+
         <h2>
           クソゲーの裏に、<br>
           記録が残っている。
         </h2>
 
+
         <p class="story-text">
+
           #01から番号順に遊ぶと、
           P-039という開発者の記録が少しずつ復元されます。
+
           ゲームの内容そのものが、
           ひとつの開発日誌になっています。
+
         </p>
+
 
 
         <div class="steps">
@@ -408,15 +620,18 @@
             <span>#01〜#10</span>
           </div>
 
+
           <div>
             <strong>NUMA40</strong>
             <span>物語内の識別タグ</span>
           </div>
 
+
           <div>
             <strong>FULL</strong>
             <span>#11〜#40</span>
           </div>
+
 
           <div>
             <strong>41.EXIT</strong>
@@ -445,20 +660,29 @@
 
 
 
-    <!-- QUOTE -->
+    <!-- =========================
+         QUOTE
+    ========================== -->
 
     <section class="quote wrap section">
 
       <blockquote>
+
         意味のない時間も、<br>
-        <em>無駄だったことにしなくていい。</em>
+
+        <em>
+          無駄だったことにしなくていい。
+        </em>
+
       </blockquote>
 
     </section>
 
 
 
-    <!-- SCREENSHOTS -->
+    <!-- =========================
+         SCREENSHOTS
+    ========================== -->
 
     <section class="wrap section">
 
@@ -476,11 +700,13 @@
 
         </div>
 
+
         <p>
           横にスワイプできます。
         </p>
 
       </div>
+
 
 
       <div class="shots">
@@ -511,7 +737,9 @@
 
 
 
-    <!-- PURCHASE -->
+    <!-- =========================
+         FULL EDITION
+    ========================== -->
 
     <section class="wrap section purchase">
 
@@ -523,18 +751,25 @@
             FULL EDITION
           </p>
 
+
           <h2>
             まだ見ぬクソゲーの先へ。
           </h2>
 
+
           <p>
+
             アプリはダウンロードして遊べます。
+
             完全版では追加30本のミニゲームと、
             物語本編・DEV NOTEが解放されます。
+
             購入はAppleのアプリ内課金を使用します。
+
           </p>
 
         </div>
+
 
 
         <a
@@ -552,7 +787,9 @@
 
 
 
-    <!-- DOWNLOAD -->
+    <!-- =========================
+         DOWNLOAD
+    ========================== -->
 
     <section
       id="download"
@@ -586,15 +823,21 @@
 
 
           <p>
+
             iPhone向けにApp Storeで配信中です。<br>
+
             アプリ本体をダウンロードして、
             まずは公開版のミニゲームから遊べます。
+
           </p>
 
 
           <p class="download-note">
-            完全版はアプリ内購入で追加30本のミニゲームと
+
+            完全版はアプリ内購入で
+            追加30本のミニゲームと
             物語本編を解放できます。
+
           </p>
 
         </div>
@@ -610,7 +853,9 @@
             rel="noreferrer"
           >
 
-            <span class="apple-mark"></span>
+            <span class="apple-mark">
+              
+            </span>
 
             <span>
 
@@ -625,6 +870,7 @@
             </span>
 
           </a>
+
 
 
           <a
@@ -644,7 +890,9 @@
 
 
 
-    <!-- SUPPORT -->
+    <!-- =========================
+         SUPPORT
+    ========================== -->
 
     <section
       id="support"
@@ -665,6 +913,7 @@
 
         </div>
 
+
         <p>
           不具合、ご意見、ご質問はこちらから。
         </p>
@@ -675,6 +924,7 @@
 
       <div class="support-grid">
 
+
         <article>
 
           <h3>
@@ -682,8 +932,12 @@
           </h3>
 
           <p>
+
             不具合報告の際は、
-            端末名・iOSバージョン・発生したゲーム番号を書いていただけると確認しやすくなります。
+            端末名・iOSバージョン・
+            発生したゲーム番号を書いていただけると
+            確認しやすくなります。
+
           </p>
 
           <a
@@ -696,6 +950,7 @@
         </article>
 
 
+
         <article>
 
           <h3>
@@ -703,12 +958,17 @@
           </h3>
 
           <p>
-            「クソゲー完全版」は買い切り型のアプリ内購入です。
+
+            「クソゲー完全版」は
+            買い切り型のアプリ内購入です。
+
             購入済みの場合は、
             アプリ内の「購入を復元」から復元できます。
+
           </p>
 
         </article>
+
 
 
         <article>
@@ -718,11 +978,17 @@
           </h3>
 
           <p>
-            NUMA40はゲーム内ストーリーの演出として登場する識別タグです。
-            購入や有料コンテンツの解放には使用されません。
+
+            NUMA40はゲーム内ストーリーの
+            演出として登場する識別タグです。
+
+            購入や有料コンテンツの解放には
+            使用されません。
+
           </p>
 
         </article>
+
 
       </div>
 
@@ -730,7 +996,9 @@
 
 
 
-    <!-- PRIVACY -->
+    <!-- =========================
+         PRIVACY
+    ========================== -->
 
     <section
       id="privacy"
@@ -754,16 +1022,22 @@
       </div>
 
 
+
       <div class="privacy-card">
+
 
         <h3>
           1. 個人情報について
         </h3>
 
         <p>
-          本アプリは、氏名・住所・電話番号などの個人情報を
+
+          本アプリは、
+          氏名・住所・電話番号などの個人情報を
           アプリ内で直接収集する機能を提供していません。
+
         </p>
+
 
 
         <h3>
@@ -771,10 +1045,16 @@
         </h3>
 
         <p>
-          完全版の購入および復元にはAppleのStoreKitを利用します。
+
+          完全版の購入および復元には
+          AppleのStoreKitを利用します。
+
           決済情報はAppleによって処理され、
-          開発者がクレジットカード情報等を直接取得・保存することはありません。
+          開発者がクレジットカード情報等を
+          直接取得・保存することはありません。
+
         </p>
+
 
 
         <h3>
@@ -782,9 +1062,12 @@
         </h3>
 
         <p>
+
           お問い合わせ時にメールで提供された情報は、
           お問い合わせ対応の目的で使用します。
+
         </p>
+
 
 
         <h3>
@@ -792,7 +1075,8 @@
         </h3>
 
         <p>
-          必要に応じて本ポリシーを改定する場合があります。
+          必要に応じて
+          本ポリシーを改定する場合があります。
         </p>
 
 
@@ -804,18 +1088,29 @@
 
     </section>
 
+
   </main>
 
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer class="wrap">
 
     <div>
-      <strong>クソゲー。</strong>
-      <span>KUSOGE PROJECT</span>
+
+      <strong>
+        クソゲー。
+      </strong>
+
+      <span>
+        KUSOGE PROJECT
+      </span>
+
     </div>
+
 
     <p>
       © 2026 Poran No. All rights reserved.
@@ -827,4 +1122,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>
