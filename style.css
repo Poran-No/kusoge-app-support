@@ -11,10 +11,6 @@
   --max:1160px;
 }
 
-/* =========================
-   BASE
-========================= */
-
 *{
   box-sizing:border-box;
 }
@@ -83,7 +79,6 @@ img{
 
 /* =========================
    SCREEN EFFECTS
-   少し弱めに調整
 ========================= */
 
 .noise{
@@ -91,8 +86,6 @@ img{
   inset:0;
   z-index:999;
   pointer-events:none;
-
-  /* 以前 .035 → 弱く */
   opacity:.018;
 
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -103,8 +96,6 @@ img{
   inset:0;
   z-index:998;
   pointer-events:none;
-
-  /* 以前 .07 → 弱く */
   opacity:.035;
 
   background:
@@ -242,7 +233,6 @@ nav a:hover{
 
 /* =========================
    GLITCH
-   ブレをかなり小さく調整
 ========================= */
 
 .glitch{
@@ -261,7 +251,6 @@ nav a:hover{
   left:0;
   top:0;
 
-  /* 以前 .38 → 控えめ */
   opacity:.22;
 
   pointer-events:none;
@@ -270,17 +259,13 @@ nav a:hover{
 .glitch::before{
   transform:translate(1px,-1px);
   color:var(--pink);
-
-  clip-path:
-    inset(0 0 55% 0);
+  clip-path:inset(0 0 55% 0);
 }
 
 .glitch::after{
   transform:translate(-1px,1px);
   color:var(--cyan);
-
-  clip-path:
-    inset(55% 0 0 0);
+  clip-path:inset(55% 0 0 0);
 }
 
 
@@ -294,10 +279,28 @@ nav a:hover{
   margin:0 0 26px;
 }
 
+/*
+  「でも、やめられない。」
+  を必ず1行で表示
+*/
 .hero h2 em{
+  display:inline-block;
+
+  white-space:nowrap;
+
   font-style:normal;
+
   color:transparent;
+
   -webkit-text-stroke:1px white;
+
+  /*
+    横幅に収まりやすいよう
+    2行目だけ少し小さくする
+  */
+  font-size:.72em;
+
+  letter-spacing:-.05em;
 }
 
 .lead{
@@ -395,9 +398,7 @@ nav a:hover{
 .halo1{
   width:520px;
   height:520px;
-
-  animation:
-    rot 16s linear infinite;
+  animation:rot 16s linear infinite;
 }
 
 .halo2{
@@ -409,8 +410,7 @@ nav a:hover{
   border-color:
     rgba(255,39,216,.24);
 
-  animation:
-    rot2 19s linear infinite;
+  animation:rot2 19s linear infinite;
 }
 
 @keyframes rot{
@@ -471,7 +471,7 @@ nav a:hover{
 
 
 /* =========================
-   SECTION TITLES
+   SECTION TITLE
 ========================= */
 
 .section-title{
@@ -998,7 +998,7 @@ footer span{
 
 
 /* =========================
-   DOWNLOAD SECTION
+   DOWNLOAD
 ========================= */
 
 .download-section{
@@ -1198,6 +1198,15 @@ footer span{
   .store-button{
     width:100%;
   }
+
+  /*
+    タブレットは横幅が広いので
+    少し大きめでも1行に収める
+  */
+  .hero h2 em{
+    font-size:.8em;
+    white-space:nowrap;
+  }
 }
 
 
@@ -1236,10 +1245,9 @@ footer span{
     font-size:68px;
   }
 
-  /*
-   iPhoneではさらに
-   グリッチを控えめに
-  */
+
+  /* iPhoneのグリッチを控えめに */
+
   .glitch{
     text-shadow:
       1px 0 var(--pink),
@@ -1261,9 +1269,27 @@ footer span{
     opacity:.18;
   }
 
+
   .hero h2{
     font-size:38px;
   }
+
+
+  /*
+    重要：
+    「でも、やめられない。」
+    をスマホでも1行固定
+  */
+
+  .hero h2 em{
+    display:inline-block;
+    white-space:nowrap;
+
+    font-size:.84em;
+
+    letter-spacing:-.055em;
+  }
+
 
   .lead br{
     display:none;
@@ -1299,16 +1325,31 @@ footer span{
     padding:28px;
   }
 
-  /*
-   スマホではノイズも
-   さらに少しだけ弱く
-  */
   .noise{
     opacity:.014;
   }
 
   .scanlines{
     opacity:.025;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   iPhone SEなど
+========================= */
+
+@media(max-width:390px){
+
+  .hero h2{
+    font-size:36px;
+  }
+
+  .hero h2 em{
+    font-size:.80em;
+    letter-spacing:-.065em;
+    white-space:nowrap;
   }
 }
 
